@@ -1,0 +1,26 @@
+{
+  "name": "chat-gql-express-react",
+  "version": "1.0.0",
+  "description": "A simple chat application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admn16/chat-gql-express-react.git"
+  },
+  "author": "Anton Nocum",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/admn16/chat-gql-express-react/issues"
+  },
+  "homepage": "https://github.com/admn16/chat-gql-express-react#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "graphql": "^0.11.7",
+    "graphql-server-express": "^1.2.0",
+    "graphql-tools": "^2.6.1"
+  }
+}
