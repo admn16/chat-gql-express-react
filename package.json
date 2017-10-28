@@ -4,7 +4,8 @@
   "description": "A simple chat application",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "nodemon --exec 'npm run lint && babel-node ./server/index.js'",
+    "lint": "eslint ./server/** --fix"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,16 @@
   },
   "homepage": "https://github.com/admn16/chat-gql-express-react#readme",
   "dependencies": {
+    "apollo-server-express": "^1.2.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "graphql": "^0.11.7",
-    "graphql-server-express": "^1.2.0",
     "graphql-tools": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.10.0",
+    "nodemon": "^1.12.1"
   }
 }
