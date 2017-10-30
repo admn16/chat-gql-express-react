@@ -1,23 +1,40 @@
-import { makeExecutableSchema } from 'graphql-tools'
+import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools'
 
-const typeDefs = [`
-    type Query {
-        hello: String
-    }
+import UserType from './types/User'
+import ConversationType from './types/Conversation'
 
-    schema {
-        query: Query
-    }`
-]
+const RootQuery = `
+type Query {
+  userById(id: ID!): User!
+  user: User
+  conversations: [Conversation]!
+}`
+
+const SchemaDefinition = `
+schema {
+  query: Query
+}
+`
 
 const resolvers = {
   Query: {
-    hello(root) {
+    user() {
       return 'world'
     }
   }
 }
 
-const schema = makeExecutableSchema({typeDefs, resolvers})
+const schema = makeExecutableSchema({
+  typeDefs: [
+    SchemaDefinition,
+    RootQuery,
+
+    UserType,
+    ConversationType,
+  ],
+  resolvers
+})
+
+addMockFunctionsToSchema({ schema })
 
 export default schema
