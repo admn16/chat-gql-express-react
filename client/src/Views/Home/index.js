@@ -2,21 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 import { 
   AppBar, 
-  Button,
-  Card, 
   ChatBox,
-  Input, 
   SideBar 
 } from '../../Components'
 
 const Container = styled.div`height: 100%;`
 
+const Section = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+`
+
 const Home = () => (
   <Container>
     <AppBar title="Chat GQL" />    
-    <SideBar />
+    <Section>
+      <SideBar/>
 
-    Home
+      <ChatBox/>
+    </Section>
   </Container>
 )
 

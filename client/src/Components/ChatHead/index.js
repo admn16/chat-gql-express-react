@@ -3,32 +3,16 @@ import styled from 'styled-components'
 
 const CircleImg = styled.img`
   border-radius: 50%;
+  height: ${(props) => props.size};
   margin-bottom: 2px;
+  width: ${(props) => props.size};
 `
 
-const Label = styled.label`
-  cursor: pointer;
-  display: block;
-  font-size: 10px;
-  padding: 7px 0 5px;  
-  text-align: center;
-  width: 100%;
-
-  &:hover {
-    background: #cccecc;
-  }
-`
-
-const ChatHead = ({ img, name }) => {
-  const shortName = name.replace(/[a-z\s]/g, '')
-  
+const ChatHead = ({ img, size = 'auto', name }) => {  
   return (
-    <div>
-      <Label>
-        <CircleImg src={img}/>
-        { shortName }
-      </Label>
-    </div>
+    <CircleImg
+      size={size}
+      src={img}/>
   )
 }
 
