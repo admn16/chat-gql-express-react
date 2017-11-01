@@ -1,13 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Messages } from './components'
 
-const Chat = () => {
+const Container = styled.div`
+  height: 100%;
+  width: 100%;
+`
+
+const ChatBox = () => {
   return (
-    <div>
+    <Container>
       <Messages />
       Input
-    </div>
+    </Container>
   )
 }
 
-export { Chat }
+export { ChatBox }
