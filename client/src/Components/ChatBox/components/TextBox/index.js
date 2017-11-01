@@ -53,7 +53,11 @@ class TextBox extends PureComponent {
 
   sendMessage = (e) => {
     e.preventDefault()
-    console.log(e.target)
+
+    const { inputAreaValue } = this.state
+    console.log(inputAreaValue)
+
+    this.setState({ inputAreaValue: '' })
   }
 
   updateState = (e) => {
