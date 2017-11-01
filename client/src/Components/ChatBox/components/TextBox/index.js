@@ -46,7 +46,7 @@ class TextBox extends PureComponent {
   }
 
   listenType(e) {
-    if ((e.ctrlKey || e.metaKey) && (e.keyCode == 13 || e.keyCode == 10)) {
+    if ((e.ctrlKey || e.metaKey) && (e.keyCode === 13 || e.keyCode === 10)) {
       document.getElementById('message-submit').click();
     }
   }
@@ -55,6 +55,7 @@ class TextBox extends PureComponent {
     e.preventDefault()
 
     const { inputAreaValue } = this.state
+
     console.log(inputAreaValue)
 
     this.setState({ inputAreaValue: '' })
