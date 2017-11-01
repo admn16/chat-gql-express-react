@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import { 
   AppBar, 
@@ -20,7 +21,9 @@ const Home = () => (
     <Section>
       <SideBar/>
 
-      <ChatBox/>
+      <Switch>
+        <Route path="/home/:chatid" component={ChatBox} />
+      </Switch>
     </Section>
   </Container>
 )
