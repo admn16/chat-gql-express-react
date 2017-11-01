@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { primary } from '../../Config/colors'
@@ -12,13 +13,16 @@ const Header = styled.header`
   z-index: 10;
 `
 
-const Title = styled.h2`
+const Title = styled(Link)`
   color: #fff;
+  display: block;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   position: relative;
   top: 11px;
   text-align: center;
+  text-decoration: none;
 `
 
 const iconStyle = {
@@ -28,7 +32,7 @@ const iconStyle = {
 const AppBar = ({ title }) => {
   return (
     <Header>
-      <Title>
+      <Title to="/">
         <i className="material-icons md-24" style={iconStyle}>whatshot</i>
         { title }
       </Title>
