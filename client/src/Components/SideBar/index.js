@@ -5,9 +5,10 @@ import { ChatHead } from '../index'
 const Aside = styled.aside`
   background: #E1E2E1;
   box-shadow: 0 0 6px 0px #6f6f6f;  
-  height: auto;
-  min-height: 100%;
+  height: 100%;
   left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
   padding-top: 20px;
   position: absolute;
   top: 50px;
@@ -17,9 +18,11 @@ const Aside = styled.aside`
 
 const SideBar = ({ children }) => {
   const ChatHeads = FakeData.map((item, i) => {
-    const name = item.name
     return (
-      <ChatHead img={item.img} name={name} key={i} />
+      <ChatHead
+        img={item.img} 
+        name={item.name} 
+        key={i} />
     )
   })
 
@@ -28,6 +31,7 @@ const SideBar = ({ children }) => {
       <Aside>
         { ChatHeads }
       </Aside>
+
       { children }
     </article>
   )
@@ -36,7 +40,7 @@ const SideBar = ({ children }) => {
 const FakeData = [
   { img: 'https://placeimg.com/50/50/people', name: 'Anton Duane Nocum' },
   { img: 'https://placeimg.com/50/50/nature', name: 'Rick Morty' },
-  { img: 'https://placeimg.com/50/50/tech', name: 'Rick Morty' },
+  { img: 'https://placeimg.com/50/50/tech', name: 'Brad Madefaka Sample' },
 ]
 
 export { SideBar }

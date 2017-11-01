@@ -19,13 +19,17 @@ const Label = styled.label`
   }
 `
 
-const ChatHead = ({ img }) => (
-  <div>
-    <Label>
-      <CircleImg src={img}/>
-      ADMN
-    </Label>
-  </div>
-)
+const ChatHead = ({ img, name }) => {
+  const shortName = name.replace(/[a-z\s]/g, '')
+  
+  return (
+    <div>
+      <Label>
+        <CircleImg src={img}/>
+        { shortName }
+      </Label>
+    </div>
+  )
+}
 
 export { ChatHead }
