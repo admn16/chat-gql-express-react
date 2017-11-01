@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Messages } from './components'
+import { Messages, TextBox } from './components'
 
 const Container = styled.div`
   height: 100%;
@@ -11,7 +11,7 @@ const ChatBox = () => {
   return (
     <Container>
       <Messages />
-      Input
+      <TextBox />
     </Container>
   )
 }
