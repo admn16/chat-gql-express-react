@@ -4,14 +4,14 @@ import { ChatHead } from '../index'
 
 const Aside = styled.aside`
   background: #E1E2E1;
-  box-shadow: 0 0 6px 0px #6f6f6f;  
+  box-shadow: 0 0 6px 0px #6f6f6f;
+  float: left;
   height: 100%;
   left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
   padding-top: 20px;
-  position: absolute;
-  top: 50px;
+  position: relative;
   width: 60px;
   z-index: 1;
 `
@@ -27,13 +27,9 @@ const SideBar = ({ children }) => {
   })
 
   return (
-    <article>
-      <Aside>
-        { ChatHeads }
-      </Aside>
-
-      { children }
-    </article>
+    <Aside>
+      { ChatHeads }
+    </Aside>
   )
 }
 

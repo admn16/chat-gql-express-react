@@ -1,13 +1,23 @@
 import React from 'react'
-import { AppBar, Button, Card, Input, SideBar } from '../../Components'
+import styled from 'styled-components'
+import { 
+  AppBar, 
+  Button,
+  Card, 
+  ChatBox,
+  Input, 
+  SideBar 
+} from '../../Components'
+
+const Container = styled.div`height: 100%;`
 
 const Home = () => (
-  <section>
-    <SideBar>
-      <AppBar title="Chat GQL" />    
-      home
-    </SideBar>
-  </section>
+  <Container>
+    <AppBar title="Chat GQL" />    
+    <SideBar />
+
+    Home
+  </Container>
 )
 
 export { Home }
